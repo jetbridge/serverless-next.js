@@ -540,8 +540,8 @@ class Builder {
   }
 
   async readNextConfig(): Promise<NextConfig | undefined> {
-    const nextConfigPath = getNextConfigPath(this.nextConfigDir);
-
+    // const nextConfigPath = getNextConfigPath(this.nextConfigDir);
+    const nextConfigPath = path.join(this.nextConfigDir, "next.config.js");
     if (await fse.pathExists(nextConfigPath)) {
       const nextConfig = await require(nextConfigPath);
 
